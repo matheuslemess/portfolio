@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Nome - Portfólio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #d1d5db; /* text-gray-300 */
+        }
+        .glass-effect {
+            background: rgba(31, 41, 55, 0.5); /* bg-gray-800 with opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">M<span class="text-sky-400">.</span>L<span class="text-sky-400">.</span></a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-sky-400 transition-colors">Início</a>
+                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">Sobre</a>
+                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projetos</a>
+                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#home" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Início</a>
+            <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Sobre</a>
+            <a href="#projects" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Projetos</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Contato</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6">
+
+        <!-- Home/Hero Section -->
+        <section id="home" class="min-h-screen flex items-center pt-20">
+            <div class="w-full text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Olá, eu sou <br class="md-hidden"><span class="text-gradient">Matheus Lemes</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto md:mx-0">
+                    Front-end | React | Golang | TypeScript | AWS | SQL | Apaixonado por criar experiências que conectam pessoas.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#projects" class="bg-sky-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105">
+                        Meus Projetos
+                    </a>
+                    <a href="#contact" class="bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-600 transition-all duration-300 transform hover:scale-105">
+                        Fale Comigo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Sobre <span class="text-sky-400">Mim</span></h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="lemes.jpeg" alt="Foto de Seu Nome" class="rounded-full w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm shadow-2xl">
+                </div>
+                <div class="md:w-2/3 text-lg text-gray-400 space-y-4">
+                    <p>
+                        Mais do que um desenvolvedor front-end, sou um entusiasta da tecnologia, fascinado por sua capacidade de conectar pessoas e simplificar o complexo. Para mim, cada linha de código é uma oportunidade de criar uma experiência que pode facilitar o dia de alguém.
+                    </p>
+                    <p>
+                        Minha jornada até a tecnologia não foi uma linha reta. Trazendo mais de dois anos de experiência em gestão operacional e atendimento ao cliente, aprendi a ouvir, entender dores e buscar soluções com empatia. Hoje, aplico isso como desenvolvedor front-end, construindo pontes entre a lógica da máquina e a necessidade humana.
+                    </p>
+                    <p>
+                        Movido pela curiosidade, estou sempre em busca de novos aprendizados. Atualmente, busco aprofundar meus conhecimentos em arquitetura de software e explorar o back-end, para ter uma visão mais completa do ciclo de desenvolvimento.
+                    </p>
+                    <h3 class="text-xl font-semibold text-white pt-4">Minhas Habilidades:</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">HTML5</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">CSS3</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">TypeScript</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">React.js</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Chakra UI</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">APIs REST</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Context API</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Design Responsivo</span>
+                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Acessibilidade (a11y)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Meus <span class="text-sky-400">Projetos</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="glass-effect rounded-lg overflow-hidden group transform transition-all duration-300 hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/1f2937/38bdf8?text=Portal+COTIN" alt="Imagem do Portal COTIN" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Portal COTIN - MS</h3>
+                        <p class="text-gray-400 mb-4">
+                            Portal institucional para a Coordenadoria de Tecnologia da Informação do MS, centralizando informações e serviços.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">React</span>
+                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">APIs REST</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fab fa-github"></i></a>
+                                <a href="https://portal-cotin.ms.gov.br/" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass-effect rounded-lg overflow-hidden group transform transition-all duration-300 hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/1f2937/818cf8?text=Projeto+2" alt="Imagem do Projeto 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Nome do Projeto 2</h3>
+                        <p class="text-gray-400 mb-4">
+                            Uma breve descrição do seu projeto, as tecnologias usadas e o problema que ele resolve.
+                        </p>
+                         <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">TypeScript</span>
+                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">API REST</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="glass-effect rounded-lg overflow-hidden group transform transition-all duration-300 hover:-translate-y-2">
+                    <img src="https://placehold.co/600x400/1f2937/f472b6?text=Projeto+3" alt="Imagem do Projeto 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Nome do Projeto 3</h3>
+                        <p class="text-gray-400 mb-4">
+                            Uma breve descrição do seu projeto, as tecnologias usadas e o problema que ele resolve.
+                        </p>
+                         <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">React.js</span>
+                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">Context API</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+             <h2 class="text-4xl font-bold text-center mb-4 text-white">Entre em <span class="text-sky-400">Contato</span></h2>
+             <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                 Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
+             </p>
+             <div class="flex justify-center items-center gap-6 mb-8">
+                <a href="mailto:matheuslemess05@gmail.com" class="text-lg bg-gray-800 py-3 px-6 rounded-lg text-white hover:bg-gray-700 transition-colors">
+                    matheuslemess05@gmail.com
+                </a>
+             </div>
+             <div class="flex justify-center space-x-6">
+                <a href="https://github.com/matheuslemess" target="_blank" class="text-gray-400 hover:text-sky-400 text-3xl transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/ibn/4matheuslemes" target="_blank" class="text-gray-400 hover:text-sky-400 text-3xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                <!-- Link do WhatsApp -->
+                <a href="https://wa.me/5567991368436?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" class="text-gray-400 hover:text-green-500 text-3xl transition-colors"><i class="fab fa-whatsapp"></i></a>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+            <p>&copy; 2025 Matheus Lemes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Header Scroll Effect -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.getElementById('header');
+
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add background to header on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass-effect');
+            } else {
+                header.classList.remove('glass-effect');
+            }
+        });
+    </script>
+</body>
+</html>
+
