@@ -3,228 +3,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Nome - Portfólio</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Matheus Lemes - Portfólio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%2396F2AF' /><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Anton' font-size='50' fill='%23000'>ML</text></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
-        /* Custom styles */
+        :root {
+            --cor-fundo: #FFFFFF;
+            --cor-texto-principal: #000000;
+            --cor-destaque: #96F2AF;
+            --cor-texto-secundario: #4A4A4A;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; /* bg-gray-900 */
-            color: #d1d5db; /* text-gray-300 */
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
         }
-        .glass-effect {
-            background: rgba(31, 41, 55, 0.5); /* bg-gray-800 with opacity */
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        h1, h2, h3 {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
+
+        h1 {
+            line-height: 1.2;
+        }
+        
+        .titulo-destaque span {
+            background-color: var(--cor-destaque);
+            padding: 0 12px;
+            color: var(--cor-texto-principal);
+        }
+        
         .text-gradient {
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            -webkit-text-fill-color: unset;
+            color: var(--cor-texto-principal); 
+        }
+        .text-gradient span {
+             background-color: var(--cor-destaque);
+             padding: 0 12px;
+        }
+
+        #header {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+        }
+        
+        header nav a {
+            color: var(--cor-texto-principal);
+            font-weight: 600;
+        }
+        header nav a:hover {
+            color: var(--cor-texto-principal);
+            text-decoration: underline;
+            text-decoration-color: var(--cor-destaque);
+            text-decoration-thickness: 3px;
+        }
+        header .text-white { color: var(--cor-texto-principal) !important; }
+        header .text-sky-400 { color: var(--cor-texto-principal) !important; }
+
+        p {
+            color: var(--cor-texto-secundario);
+        }
+
+        .card-projeto {
+            background-color: rgba(249, 249, 249, 0.9); /* Ligeira transparência para ver o fundo */
+            backdrop-filter: blur(5px);
+            border: 2px solid #000;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+        }
+        .card-projeto:hover {
+            transform: translateY(-8px);
+            box-shadow: 8px 8px 0px var(--cor-destaque);
+        }
+        .card-projeto h3, .card-projeto p, .card-projeto span, .card-projeto a {
+             color: var(--cor-texto-principal);
+        }
+        .card-projeto .tag-skill {
+            background-color: var(--cor-destaque);
+            color: #000;
+            font-weight: 600;
+        }
+
+        .botao-principal {
+            background-color: var(--cor-texto-principal);
+            color: var(--cor-fundo);
+            font-weight: 700;
+            border: 2px solid var(--cor-texto-principal);
+        }
+        .botao-principal:hover {
+            background-color: var(--cor-destaque);
+            color: var(--cor-texto-principal);
+        }
+        .botao-secundario {
+            background-color: transparent;
+            color: var(--cor-texto-principal);
+            font-weight: 700;
+            border: 2px solid var(--cor-texto-principal);
+        }
+        .botao-secundario:hover {
+             background-color: var(--cor-texto-principal);
+             color: var(--cor-fundo);
+        }
+
+        a {
+            transition: color 0.2s;
+        }
+        #contact a, .card-projeto a {
+            color: var(--cor-texto-principal);
+        }
+        #contact a:hover {
+            color: var(--cor-destaque);
+        }
+        
+        /* ANIMAÇÕES DE FUNDO */
+
+        /* 1. Efeito de Estrelas/Partículas para #home */
+        @keyframes animStar {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-2000px);
+            }
+        }
+
+        .stars, .stars2, .stars3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 40px 70px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 50px 160px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 90px 40px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 110px 100px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 130px 200px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 150px 50px, var(--cor-texto-secundario), transparent);
+            background-size: 200px 200px;
+            animation: animStar 50s linear infinite;
+            opacity: 0.3;
+        }
+
+        .stars2 {
+            background-image:
+                radial-gradient(2px 2px at 5px 100px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 70px 90px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 100px 150px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 120px 20px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 160px 180px, var(--cor-texto-secundario), transparent);
+            background-size: 250px 250px;
+            animation: animStar 70s linear infinite;
+        }
+
+        .stars3 {
+            background-image:
+                radial-gradient(2px 2px at 10px 80px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 60px 120px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 80px 10px, var(--cor-texto-secundario), transparent),
+                radial-gradient(2px 2px at 140px 190px, var(--cor-texto-secundario), transparent);
+            background-size: 300px 300px;
+            animation: animStar 100s linear infinite;
+        }
+        
+        /* 2. Efeito de Linhas Cruzadas Animadas para #about */
+        .animated-lines {
+            background-color: var(--cor-fundo);
+        }
+
+        .animated-lines::before,
+        .animated-lines::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 60px 60px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .animated-lines::before {
+            background-image: linear-gradient(to right, var(--cor-texto-principal) 1px, transparent 1px),
+                              linear-gradient(to bottom, var(--cor-texto-principal) 1px, transparent 1px);
+            animation: moveLinesX 30s linear infinite;
+        }
+
+        .animated-lines::after {
+            background-image: linear-gradient(to left, var(--cor-texto-principal) 1px, transparent 1px),
+                              linear-gradient(to top, var(--cor-texto-principal) 1px, transparent 1px);
+            animation: moveLinesY 30s linear infinite;
+        }
+
+        @keyframes moveLinesX {
+            from { background-position: 0 0; }
+            to { background-position: 60px 60px; }
+        }
+
+        @keyframes moveLinesY {
+            from { background-position: 60px 60px; }
+            to { background-position: 0 0; }
+        }
+
+        /* 3. Ondas para a seção #contact */
+        @keyframes wave-move-1 {
+            0%, 100% { d: path("M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,144C960,128,1056,128,1152,144C1248,160,1344,192,1392,208L1440,224L1440,320L0,320Z"); }
+            50% { d: path("M0,192L48,202.7C96,213,192,235,288,218.7C384,203,480,149,576,144C672,139,768,181,864,197.3C960,213,1056,203,1152,181.3C1248,160,1344,128,1392,112L1440,96L1440,320L0,320Z"); }
+        }
+        @keyframes wave-move-2 {
+            0%, 100% { d: path("M0,256L48,245.3C96,235,192,213,288,202.7C384,192,480,192,576,213.3C672,235,768,277,864,282.7C960,288,1056,256,1152,234.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L0,320Z"); }
+            50% { d: path("M0,256L48,234.7C96,213,192,171,288,165.3C384,160,480,192,576,218.7C672,245,768,267,864,250.7C960,235,1056,181,1152,170.7C1248,160,1344,192,1392,208L1440,224L1440,320L0,320Z"); }
+        }
+
+        .wave-1 {
+            animation: wave-move-1 15s infinite ease-in-out alternate;
+        }
+        .wave-2 {
+            animation: wave-move-2 12s infinite ease-in-out alternate;
+        }
+
+        .language-buttons button {
+            background-color: transparent;
+            border: 1px solid var(--cor-texto-principal);
+            color: var(--cor-texto-principal);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+        .language-buttons button.active,
+        .language-buttons button:hover {
+            background-color: var(--cor-destaque);
+            border-color: var(--cor-destaque);
+            color: var(--cor-texto-principal);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">M<span class="text-sky-400">.</span>L<span class="text-sky-400">.</span></a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-300 hover:text-sky-400 transition-colors">Início</a>
-                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">Sobre</a>
-                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projetos</a>
-                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contato</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-gray-300 text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
+            <a href="#" class="text-2xl font-bold">M.L.</a>
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" data-lang="navHome"></a>
+                    <a href="#about" data-lang="navAbout"></a>
+                    <a href="#projects" data-lang="navProjects"></a>
+                    <a href="#contact" data-lang="navContact"></a>
+                </nav>
+                <div class="language-buttons flex space-x-2">
+                    <button id="lang-pt" class="active">PT</button>
+                    <button id="lang-en">EN</button>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
-            <a href="#home" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Início</a>
-            <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Sobre</a>
-            <a href="#projects" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Projetos</a>
-            <a href="#contact" class="block py-2 px-6 text-gray-300 hover:bg-gray-700">Contato</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block py-3 px-6 hover:bg-gray-100" data-lang="navHome"></a>
+            <a href="#about" class="block py-3 px-6 hover:bg-gray-100" data-lang="navAbout"></a>
+            <a href="#projects" class="block py-3 px-6 hover:bg-gray-100" data-lang="navProjects"></a>
+            <a href="#contact" class="block py-3 px-6 hover:bg-gray-100" data-lang="navContact"></a>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6">
 
-        <!-- Home/Hero Section -->
-        <section id="home" class="min-h-screen flex items-center pt-20">
-            <div class="w-full text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
-                    Olá, eu sou <br class="md-hidden"><span class="text-gradient">Matheus Lemes</span>
+        <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+            <div class="stars"></div>
+            <div class="stars2"></div>
+            <div class="stars3"></div>
+            <div class="w-full text-center md:text-left z-10">
+                <h1 class="text-5xl md:text-7xl py-1 font-extrabold mb-4">
+                    <span data-lang="homeIntro"></span> <br class="md-hidden">
+                     <h2 class="text-5xl md:text-7xl py-2 font-extrabold font-bold mb-12 titulo-destaque"><span>Matheus Lemes</span></h2>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto md:mx-0">
-                    Front-end | React | Golang | TypeScript | AWS | SQL | Apaixonado por criar experiências que conectam pessoas.
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0" data-lang="homeDescription">
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#projects" class="bg-sky-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105">
-                        Meus Projetos
+                    <a href="#projects" class="botao-principal text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" data-lang="homeProjectsBtn">
                     </a>
-                    <a href="#contact" class="bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-600 transition-all duration-300 transform hover:scale-105">
-                        Fale Comigo
+                    <a href="#contact" class="botao-secundario font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" data-lang="homeContactBtn">
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Sobre <span class="text-sky-400">Mim</span></h2>
-            <div class="flex flex-col md:flex-row items-center gap-12">
+        <section id="about" class="py-20 relative overflow-hidden animated-lines">
+            <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque z-10 relative"><span data-lang="aboutTitle"></span></h2>
+            <div class="flex flex-col md:flex-row items-center gap-12 z-10 relative">
                 <div class="md:w-1/3">
-                    <img src="lemes.jpeg" alt="Foto de Seu Nome" class="rounded-full w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm shadow-2xl">
+                    <img src="lemes.jpeg" alt="Foto de Matheus Lemes" class="rounded-lg w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm border-2 border-black" style="box-shadow: 8px 8px 0px #000;">
                 </div>
-                <div class="md:w-2/3 text-lg text-gray-400 space-y-4">
-                    <p>
-                        Mais do que um desenvolvedor front-end, sou um entusiasta da tecnologia, fascinado por sua capacidade de conectar pessoas e simplificar o complexo. Para mim, cada linha de código é uma oportunidade de criar uma experiência que pode facilitar o dia de alguém.
-                    </p>
-                    <p>
-                        Minha jornada até a tecnologia não foi uma linha reta. Trazendo mais de dois anos de experiência em gestão operacional e atendimento ao cliente, aprendi a ouvir, entender dores e buscar soluções com empatia. Hoje, aplico isso como desenvolvedor front-end, construindo pontes entre a lógica da máquina e a necessidade humana.
-                    </p>
-                    <p>
-                        Movido pela curiosidade, estou sempre em busca de novos aprendizados. Atualmente, busco aprofundar meus conhecimentos em arquitetura de software e explorar o back-end, para ter uma visão mais completa do ciclo de desenvolvimento.
-                    </p>
-                    <h3 class="text-xl font-semibold text-white pt-4">Minhas Habilidades:</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">HTML5</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">CSS3</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">TypeScript</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">React.js</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Chakra UI</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">APIs REST</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Context API</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Design Responsivo</span>
-                        <span class="bg-gray-700 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Acessibilidade (a11y)</span>
+                <div class="md:w-2/3 text-lg space-y-4">
+                    <p data-lang="aboutP1"></p>
+                    <p data-lang="aboutP2"></p>
+                    <p data-lang="aboutP3"></p>
+                    <h3 class="text-2xl font-semibold pt-4" data-lang="aboutSkillsTitle"></h3>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start text-4xl mt-4">
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-html5-plain colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">HTML5</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-css3-plain colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">CSS3</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-javascript-plain colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">JavaScript</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-typescript-plain colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">TypeScript</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-react-original colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">React.js</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-tailwindcss-plain colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">Tailwind CSS</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-go-original-wordmark colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">Golang</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-amazonwebservices-original colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">AWS</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-git-plain colored transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">Git</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="devicon-github-original transition-transform duration-300 group-hover:scale-110" style="color: #181717;"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">GitHub</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="fas fa-network-wired text-gray-700 transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">APIs REST</span>
+                        </div>
+                        <div class="flex flex-col items-center group relative">
+                            <i class="fas fa-mobile-alt text-gray-700 transition-transform duration-300 group-hover:scale-110"></i>
+                            <span class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded-md">Design Responsivo</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Meus <span class="text-sky-400">Projetos</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="projects" class="py-20 relative overflow-hidden">
+            <div id="particles-js-projects" class="absolute inset-0 z-0"></div>
+
+            <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque relative z-10"><span data-lang="projectsTitle"></span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                 
-                <!-- Project Card 1 -->
-                <div class="glass-effect rounded-lg overflow-hidden group transform transition-all duration-300 hover:-translate-y-2">
-                    <img src="https://placehold.co/600x400/1f2937/38bdf8?text=Portal+COTIN" alt="Imagem do Portal COTIN" class="w-full h-48 object-cover">
+                <div class="card-projeto overflow-hidden">
+                    <img src="./cotin.png" alt="Imagem do Portal COTIN" class="w-full h-48 object-cover border-b-2 border-black" loading="lazy">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Portal COTIN - MS</h3>
-                        <p class="text-gray-400 mb-4">
-                            Portal institucional para a Coordenadoria de Tecnologia da Informação do MS, centralizando informações e serviços.
+                        <h3 class="text-2xl font-bold mb-2" data-lang="projectCotinTitle"></h3>
+                        <p class="mb-4" data-lang="projectCotinDescription">
                         </p>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
-                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">React</span>
-                               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">APIs REST</span>
+                               <span class="tag-skill text-xs font-semibold px-2 py-1 rounded-full">React</span>
+                               <span class="tag-skill text-xs font-semibold px-2 py-1 rounded-full">APIs REST</span>
                             </div>
                             <div class="flex space-x-4">
-                                <a href="#" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fab fa-github"></i></a>
-                                <a href="https://portal-cotin.ms.gov.br/" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://portal-cotin.ms.gov.br/" target="_blank" aria-label="Ver demonstração online"><i class="fas fa-external-link-alt text-xl"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-              <div class="glass-effect rounded-lg overflow-hidden group transform transition-all duration-300 hover:-translate-y-2">
-    <img src="./rino.png" alt="Capa do projeto React DragGrid Library" class="w-full h-48 object-cover">
-    <div class="p-6">
-        <h3 class="text-2xl font-bold text-white mb-2">React DragGrid Library</h3>
-        <p class="text-gray-400 mb-4">
-            Biblioteca open-source para React que permite criar dashboards com grids dinâmicos, arrastáveis e redimensionáveis de forma simples e flexível.
-        </p>
-        <div class="flex justify-between items-center">
-            <div class="flex space-x-2">
-               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">React</span>
-               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">NPM</span>
-               <span class="text-xs font-semibold bg-gray-700 text-sky-300 px-2 py-1 rounded-full">Vite</span>
-            </div>
-            <div class="flex space-x-4">
-                <a href="https://github.com/matheuslemess/react-draggrid-library" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl" aria-label="Ver código no GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://dashboard-interativo-livid.vercel.app/" target="_blank" class="text-gray-300 hover:text-sky-400 text-xl" aria-label="Ver demonstração online">
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+                <div class="card-projeto overflow-hidden">
+                    <img src="./rino.png" alt="Capa do projeto React DragGrid Library" class="w-full h-48 object-cover border-b-2 border-black" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2" data-lang="projectDragGridTitle"></h3>
+                        <p class="mb-4" data-lang="projectDragGridDescription">
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                               <span class="tag-skill text-xs font-semibold px-2 py-1 rounded-full">React</span>
+                               <span class="tag-skill text-xs font-semibold px-2 py-1 rounded-full">NPM</span>
+                               <span class="tag-skill text-xs font-semibold px-2 py-1 rounded-full">Vite</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/matheuslemess/react-draggrid-library" target="_blank" aria-label="Ver código no GitHub">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="https://dashboard-interativo-livid.vercel.app/" target="_blank" aria-label="Ver demonstração online">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 text-center">
-             <h2 class="text-4xl font-bold text-center mb-4 text-white">Entre em <span class="text-sky-400">Contato</span></h2>
-             <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                 Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
+        <section id="contact" class="py-20 text-center relative overflow-hidden">
+             <h2 class="text-4xl font-bold text-center mb-4 titulo-destaque"><span data-lang="contactTitle"></span></h2>
+             <p class="mb-8 max-w-2xl mx-auto" data-lang="contactDescription">
              </p>
              <div class="flex justify-center items-center gap-6 mb-8">
-                <a href="mailto:matheuslemess05@gmail.com" class="text-lg bg-gray-800 py-3 px-6 rounded-lg text-white hover:bg-gray-700 transition-colors">
-                    matheuslemess05@gmail.com
+                <a href="mailto:matheuslemess05@gmail.com" class="text-lg botao-secundario py-3 px-6 rounded-lg transition-colors" data-lang="contactEmailBtn">
                 </a>
              </div>
              <div class="flex justify-center space-x-6">
-                <a href="https://github.com/matheuslemess" target="_blank" class="text-gray-400 hover:text-sky-400 text-3xl transition-colors"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/ibn/4matheuslemes" target="_blank" class="text-gray-400 hover:text-sky-400 text-3xl transition-colors"><i class="fab fa-linkedin"></i></a>
-                <!-- Link do WhatsApp -->
-                <a href="https://wa.me/5567991368436?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" class="text-gray-400 hover:text-green-500 text-3xl transition-colors"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://github.com/matheuslemess" target="_blank" class="text-3xl" aria-label="Visitar meu perfil no GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/4matheuslemes" target="_blank" class="text-3xl" aria-label="Visitar meu perfil no LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/5567991368436?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" class="text-3xl" aria-label="Entrar em contato pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>
              </div>
+             
+            <div class="absolute bottom-0 left-0 w-full z-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path class="wave-1" fill="#96F2AF" fill-opacity="0.3" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,144C960,128,1056,128,1152,144C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    <path class="wave-2" fill="#000000" fill-opacity="0.2" d="M0,256L48,245.3C96,235,192,213,288,202.7C384,192,480,192,576,213.3C672,235,768,277,864,282.7C960,288,1056,256,1152,234.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800">
-        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
-            <p>&copy; 2025 Matheus Lemes. Todos os direitos reservados.</p>
+    <footer class="border-t border-gray-200">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p data-lang="footerText"></p>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu and Header Scroll Effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script>
+        // --- CONTEÚDO MULTI-IDIOMA ---
+        const content = {
+            pt: {
+                navHome: "Início",
+                navAbout: "Sobre",
+                navProjects: "Projetos",
+                navContact: "Contato",
+                homeIntro: "Olá, eu sou",
+                homeDescription: "Eu crio experiências que conectam pessoas.",
+                homeProjectsBtn: "Meus Projetos",
+                homeContactBtn: "Fale Comigo",
+                aboutTitle: "Sobre Mim",
+                aboutP1: "Mais do que um desenvolvedor front-end, sou um entusiasta da tecnologia, fascinado por sua capacidade de conectar pessoas e simplificar o complexo. Para mim, cada linha de código é uma oportunidade de criar uma experiência que pode facilitar o dia de alguém.",
+                aboutP2: "Minha jornada até a tecnologia não foi uma linha reta. Trazendo mais de dois anos de experiência em gestão operacional e atendimento ao cliente, aprendi a ouvir, entender dores e buscar soluções com empatia. Hoje, aplico isso como desenvolvedor front-end, construindo pontes entre a lógica da máquina e a necessidade humana.",
+                aboutP3: "Movido pela curiosidade, estou sempre em busca de novos aprendizados. Atualmente, busco aprofundar meus conhecimentos em arquitetura de software e explorar o back-end, para ter uma visão mais completa do ciclo de desenvolvimento.",
+                aboutSkillsTitle: "Minhas Habilidades:",
+                projectsTitle: "Meus Projetos",
+                projectCotinTitle: "Portal COTIN - MS",
+                projectCotinDescription: "Portal institucional para a Coordenadoria de Tecnologia da Informação do MS, centralizando informações e serviços.",
+                projectDragGridTitle: "React DragGrid Library",
+                projectDragGridDescription: "Biblioteca open-source para React que permite criar dashboards com grids dinâmicos, arrastáveis e redimensionáveis.",
+                contactTitle: "Entre em Contato",
+                contactDescription: "Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!",
+                contactEmailBtn: "matheuslemess05@gmail.com",
+                footerText: "&copy; 2025 Matheus Lemes. Todos os direitos reservados."
+            },
+            en: {
+                navHome: "Home",
+                navAbout: "About",
+                navProjects: "Projects",
+                navContact: "Contact",
+                homeIntro: "Hi, I'm",
+                homeDescription: "I create experiences that connect people.",
+                homeProjectsBtn: "My Projects",
+                homeContactBtn: "Contact Me",
+                aboutTitle: "About Me",
+                aboutP1: "More than a front-end developer, I'm a technology enthusiast, fascinated by its ability to connect people and simplify complexity. For me, every line of code is an opportunity to create an experience that can make someone's day easier.",
+                aboutP2: "My journey into technology wasn't a straight line. Bringing over two years of experience in operational management and customer service, I learned to listen, understand pain points, and seek solutions with empathy. Today, I apply this as a front-end developer, building bridges between machine logic and human needs.",
+                aboutP3: "Driven by curiosity, I am always seeking new knowledge. Currently, I'm looking to deepen my understanding of software architecture and explore back-end development, to gain a more complete view of the development cycle.",
+                aboutSkillsTitle: "My Skills:",
+                projectsTitle: "My Projects",
+                projectCotinTitle: "COTIN - MS Portal",
+                projectCotinDescription: "Institutional portal for the Information Technology Coordination of MS, centralizing information and services.",
+                projectDragGridTitle: "React DragGrid Library",
+                projectDragGridDescription: "Open-source library for React that allows creating dynamic, draggable, and resizable grid dashboards.",
+                contactTitle: "Get in Touch",
+                contactDescription: "I am always open to new opportunities and collaborations. Feel free to reach out!",
+                contactEmailBtn: "matheuslemess05@gmail.com",
+                footerText: "&copy; 2025 Matheus Lemes. All rights reserved."
+            }
+        };
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (content[lang][key]) {
+                    element.innerHTML = content[lang][key];
+                }
+            });
+
+            // Atualiza o texto do WhatsApp link com o idioma correto
+            const whatsappLink = document.querySelector('a[href*="wa.me"]');
+            if (whatsappLink) {
+                 if (lang === 'pt') {
+                    whatsappLink.href = "https://wa.me/5567991368436?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.";
+                    whatsappLink.setAttribute("aria-label", "Entrar em contato pelo WhatsApp");
+                 } else { // 'en'
+                    whatsappLink.href = "https://wa.me/5567991368436?text=Hello!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20chat.";
+                    whatsappLink.setAttribute("aria-label", "Contact me via WhatsApp");
+                 }
+            }
+
+            // Atualiza os atributos aria-label para os links de projetos
+            document.querySelector('a[href="https://portal-cotin.ms.gov.br/"]').setAttribute("aria-label", lang === 'pt' ? "Ver demonstração online" : "View live demo");
+            document.querySelector('a[href="https://github.com/matheuslemess/react-draggrid-library"]').setAttribute("aria-label", lang === 'pt' ? "Ver código no GitHub" : "View code on GitHub");
+            document.querySelector('a[href="https://dashboard-interativo-livid.vercel.app/"]').setAttribute("aria-label", lang === 'pt' ? "Ver demonstração online" : "View live demo");
+
+            document.getElementById('lang-pt').classList.remove('active');
+            document.getElementById('lang-en').classList.remove('active');
+            document.getElementById(`lang-${lang}`).classList.add('active');
+
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang') || 'pt';
+        updateContent(savedLang);
+
+        document.getElementById('lang-pt').addEventListener('click', () => updateContent('pt'));
+        document.getElementById('lang-en').addEventListener('click', () => updateContent('en'));
+
+
+        // --- CONTROLE DO MENU MOBILE ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const header = document.getElementById('header');
 
-        // Toggle mobile menu
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+    </script>
 
-        // Add background to header on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('glass-effect');
-            } else {
-                header.classList.remove('glass-effect');
-            }
+    <script>
+        particlesJS("particles-js-projects", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#cccccc" 
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#96F2AF", // Cor destaque do seu site
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab" 
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push" 
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1 
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
         });
     </script>
+    
 </body>
 </html>
-
