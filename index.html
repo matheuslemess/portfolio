@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         :root {
@@ -78,7 +78,7 @@
         }
 
         .card-projeto {
-            background-color: rgba(249, 249, 249, 0.9); /* Ligeira transparência para ver o fundo */
+            background-color: rgba(249, 249, 249, 0.9);
             backdrop-filter: blur(5px);
             border: 2px solid #000;
             border-radius: 8px;
@@ -118,68 +118,61 @@
              color: var(--cor-fundo);
         }
 
-        a {
-            transition: color 0.2s;
-        }
-        #contact a, .card-projeto a {
-            color: var(--cor-texto-principal);
-        }
-        #contact a:hover {
-            color: var(--cor-destaque);
-        }
-        
-        /* ANIMAÇÕES DE FUNDO */
+        a { transition: color 0.2s; }
+        #contact a, .card-projeto a { color: var(--cor-texto-principal); }
+        #contact a:hover { color: var(--cor-destaque); }
 
-        /* 1. Efeito de Estrelas/Partículas para #home */
-        @keyframes animStar {
-            from {
-                transform: translateY(0px);
-            }
-            to {
-                transform: translateY(-2000px);
-            }
-        }
+         /* 1. Efeito de Estrelas/Partículas para #home */
+/* 1. Efeito de Estrelas/Partículas para #home */
+@keyframes animStar {
+  from { background-position: 0 0; }
+  to   { background-position: 0 -2000px; }
+}
 
-        .stars, .stars2, .stars3 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(2px 2px at 20px 30px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 40px 70px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 50px 160px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 90px 40px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 110px 100px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 130px 200px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 150px 50px, var(--cor-texto-secundario), transparent);
-            background-size: 200px 200px;
-            animation: animStar 50s linear infinite;
-            opacity: 0.3;
-        }
+.stars, .stars2, .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+  animation: animStar 50s linear infinite;
+}
 
-        .stars2 {
-            background-image:
-                radial-gradient(2px 2px at 5px 100px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 70px 90px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 100px 150px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 120px 20px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 160px 180px, var(--cor-texto-secundario), transparent);
-            background-size: 250px 250px;
-            animation: animStar 70s linear infinite;
-        }
+.stars {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 50px 160px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 90px 40px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 110px 100px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 130px 200px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 150px 50px, var(--cor-texto-secundario), transparent);
+  background-size: 200px 200px;
+  animation-duration: 50s;
+}
 
-        .stars3 {
-            background-image:
-                radial-gradient(2px 2px at 10px 80px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 60px 120px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 80px 10px, var(--cor-texto-secundario), transparent),
-                radial-gradient(2px 2px at 140px 190px, var(--cor-texto-secundario), transparent);
-            background-size: 300px 300px;
-            animation: animStar 100s linear infinite;
-        }
-        
+.stars2 {
+  background-image:
+    radial-gradient(2px 2px at 5px 100px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 70px 90px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 100px 150px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 120px 20px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 160px 180px, var(--cor-texto-secundario), transparent);
+  background-size: 250px 250px;
+  animation-duration: 70s;
+}
+
+.stars3 {
+  background-image:
+    radial-gradient(2px 2px at 10px 80px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 60px 120px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 80px 10px, var(--cor-texto-secundario), transparent),
+    radial-gradient(2px 2px at 140px 190px, var(--cor-texto-secundario), transparent);
+  background-size: 300px 300px;
+  animation-duration: 100s;
+}
+
         /* 2. Efeito de Linhas Cruzadas Animadas para #about */
         .animated-lines {
             background-color: var(--cor-fundo);
@@ -256,8 +249,8 @@
 </head>
 <body class="antialiased">
 
-    <header id="header" class="fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 w-full">
+        <div class="w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold">M.L.</a>
             <div class="flex items-center space-x-6">
                 <nav class="hidden md:flex space-x-8">
@@ -270,9 +263,7 @@
                     <button id="lang-pt" class="active">PT</button>
                     <button id="lang-en">EN</button>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-2xl">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button id="mobile-menu-button" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
@@ -283,31 +274,29 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-6">
+    <main class="w-full">
 
-        <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
-            <div class="stars"></div>
-            <div class="stars2"></div>
-            <div class="stars3"></div>
-            <div class="w-full text-center md:text-left z-10">
+        <!-- HOME -->
+        <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden w-full">
+            <div class="stars"></div><div class="stars2"></div><div class="stars3"></div>
+            <div class="w-full max-w-7xl mx-auto px-6 text-center md:text-left z-10">
                 <h1 class="text-5xl md:text-7xl py-1 font-extrabold mb-4">
-                    <span data-lang="homeIntro"></span> <br class="md-hidden">
-                     <h2 class="text-5xl md:text-7xl py-2 font-extrabold font-bold mb-12 titulo-destaque"><span>Matheus Lemes</span></h2>
+                    <span data-lang="homeIntro"></span><br>
+                    <h2 class="text-5xl md:text-7xl py-2 font-extrabold mb-12 titulo-destaque"><span>Matheus Lemes</span></h2>
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0" data-lang="homeDescription">
-                </p>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto md:mx-0" data-lang="homeDescription"></p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#projects" class="botao-principal text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" data-lang="homeProjectsBtn">
-                    </a>
-                    <a href="#contact" class="botao-secundario font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" data-lang="homeContactBtn">
-                    </a>
+                    <a href="#projects" class="botao-principal py-3 px-6 rounded-lg" data-lang="homeProjectsBtn"></a>
+                    <a href="#contact" class="botao-secundario py-3 px-6 rounded-lg" data-lang="homeContactBtn"></a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 relative overflow-hidden animated-lines">
-            <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque z-10 relative"><span data-lang="aboutTitle"></span></h2>
-            <div class="flex flex-col md:flex-row items-center gap-12 z-10 relative">
+        <!-- ABOUT -->
+        <section id="about" class="py-20 relative overflow-hidden animated-lines w-full">
+            <div class="w-full max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque"><span data-lang="aboutTitle"></span></h2>
+                 <div class="flex flex-col md:flex-row items-center gap-12 z-10 relative">
                 <div class="md:w-1/3">
                     <img src="lemes.jpeg" alt="Foto de Matheus Lemes" class="rounded-lg w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm border-2 border-black" style="box-shadow: 8px 8px 0px #000;">
                 </div>
@@ -368,13 +357,15 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
 
-        <section id="projects" class="py-20 relative overflow-hidden">
+        <!-- PROJECTS -->
+        <section id="projects" class="py-20 relative overflow-hidden w-full">
             <div id="particles-js-projects" class="absolute inset-0 z-0"></div>
-
-            <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque relative z-10"><span data-lang="projectsTitle"></span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+            <div class="w-full max-w-7xl mx-auto px-6 relative z-10">
+                <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque"><span data-lang="projectsTitle"></span></h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                 
                 <div class="card-projeto overflow-hidden">
                     <img src="./cotin.png" alt="Imagem do Portal COTIN" class="w-full h-48 object-cover border-b-2 border-black" loading="lazy">
@@ -418,34 +409,35 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
 
-        <section id="contact" class="py-20 text-center relative overflow-hidden">
-             <h2 class="text-4xl font-bold text-center mb-4 titulo-destaque"><span data-lang="contactTitle"></span></h2>
-             <p class="mb-8 max-w-2xl mx-auto" data-lang="contactDescription">
-             </p>
-             <div class="flex justify-center items-center gap-6 mb-8">
-                <a href="mailto:matheuslemess05@gmail.com" class="text-lg botao-secundario py-3 px-6 rounded-lg transition-colors" data-lang="contactEmailBtn">
-                </a>
-             </div>
-             <div class="flex justify-center space-x-6">
-                <a href="https://github.com/matheuslemess" target="_blank" class="text-3xl" aria-label="Visitar meu perfil no GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/4matheuslemes" target="_blank" class="text-3xl" aria-label="Visitar meu perfil no LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/5567991368436?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" class="text-3xl" aria-label="Entrar em contato pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>
-             </div>
-             
+        <!-- CONTACT -->
+        <section id="contact" class="py-20 text-center relative overflow-hidden w-full">
+            <div class="w-full max-w-7xl mx-auto px-6 relative z-10">
+                <h2 class="text-4xl font-bold text-center mb-4 titulo-destaque"><span data-lang="contactTitle"></span></h2>
+                <p class="mb-8 max-w-2xl mx-auto" data-lang="contactDescription"></p>
+                <div class="flex justify-center items-center gap-6 mb-8">
+                    <a href="mailto:matheuslemess05@gmail.com" class="text-lg botao-secundario py-3 px-6 rounded-lg" data-lang="contactEmailBtn"></a>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/matheuslemess" target="_blank" class="text-3xl"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/4matheuslemes" target="_blank" class="text-3xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/5567991368436?text=Ol%C3%A1!" target="_blank" class="text-3xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
             <div class="absolute bottom-0 left-0 w-full z-0">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path class="wave-1" fill="#96F2AF" fill-opacity="0.3" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,144C960,128,1056,128,1152,144C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                    <path class="wave-2" fill="#000000" fill-opacity="0.2" d="M0,256L48,245.3C96,235,192,213,288,202.7C384,192,480,192,576,213.3C672,235,768,277,864,282.7C960,288,1056,256,1152,234.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    <path class="wave-1" fill="#96F2AF" fill-opacity="0.3" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,144C960,128,1056,128,1152,144C1248,160,1344,192,1392,208L1440,224L1440,320L0,320Z"></path>
+                    <path class="wave-2" fill="#000000" fill-opacity="0.2" d="M0,256L48,245.3C96,235,192,213,288,202.7C384,192,480,192,576,213.3C672,235,768,277,864,282.7C960,288,1056,256,1152,234.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L0,320Z"></path>
                 </svg>
             </div>
         </section>
 
     </main>
 
-    <footer class="border-t border-gray-200">
-        <div class="container mx-auto px-6 py-4 text-center">
+    <footer class="border-t border-gray-200 w-full">
+        <div class="w-full max-w-7xl mx-auto px-6 py-4 text-center">
             <p data-lang="footerText"></p>
         </div>
     </footer>
