@@ -269,6 +269,7 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" data-lang="navHome"></a>
                     <a href="#about" data-lang="navAbout"></a>
+                    <a href="#skills" data-lang="navSkills"></a>
                     <a href="#projects" data-lang="navProjects"></a>
                     <a href="#contact" data-lang="navContact"></a>
                 </nav>
@@ -282,6 +283,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <a href="#home" class="block py-3 px-6 hover:bg-gray-100" data-lang="navHome"></a>
             <a href="#about" class="block py-3 px-6 hover:bg-gray-100" data-lang="navAbout"></a>
+             <a href="#skills" class="block py-3 px-6 hover:bg-gray-100" data-lang="navSkills"></a>
             <a href="#projects" class="block py-3 px-6 hover:bg-gray-100" data-lang="navProjects"></a>
             <a href="#contact" class="block py-3 px-6 hover:bg-gray-100" data-lang="navContact"></a>
         </div>
@@ -304,12 +306,13 @@
             </div>
         </section>
 
-        <section id="about" class="py-20 relative overflow-hidden animated-lines w-full">
+        <section id="about" class="py-20 relative overflow-hidden w-full">
+            <div class="stars"></div><div class="stars2"></div><div class="stars3"></div>
             <div class="w-full max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-12 titulo-destaque"><span data-lang="aboutTitle"></span></h2>
                 <div class="flex flex-col md:flex-row items-center gap-12 z-10 relative">
                     <div class="md:w-1/3">
-                        <img src="lemes.jpeg" alt="Foto de Matheus Lemes" class="rounded-lg w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm border-2 border-black" style="box-shadow: 8px 8px 0px #000;">
+                        <img src="lemes.jpeg" alt="Foto de Matheus Lemes" class="rounded-full w-64 h-64 mx-auto md:w-full md:h-auto md:max-w-sm border-2 border-black" style="box-shadow: 8px 8px 0px #000;">
                     </div>
                     <div class="md:w-2/3 text-lg space-y-4">
                         <p data-lang="aboutP1"></p>
@@ -320,11 +323,12 @@
             </div>
         </section>
 
-        <section id="skills" class="py-20 relative overflow-hidden w-full animated-lines">
+        <section id="skills" class="py-20 relative overflow-hidden w-full">
+            <div class="stars"></div><div class="stars2"></div><div class="stars3"></div>
             <div class="w-full max-w-7xl mx-auto px-6">
                 <h2 class="text-4xl font-bold text-center mb-16 titulo-destaque"><span data-lang="skillsTitle"></span></h2>
                 <div class="relative w-full h-24 flex items-center justify-center">
-                    <div class="skills-scroller">
+                    <div class="skills-scroller py-2">
                         <div class="skills-track">
                             <div class="skill-item">
                                 <i class="devicon-html5-plain text-gray-700"></i>
@@ -376,7 +380,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-black py-2"></div>
                 </div>
             </div>
         </section>
@@ -464,6 +467,7 @@
             pt: {
                 navHome: "Início",
                 navAbout: "Sobre",
+                navSkills: "Habilidades",
                 navProjects: "Projetos",
                 navContact: "Contato",
                 homeIntro: "Olá, eu sou",
@@ -488,6 +492,7 @@
             en: {
                 navHome: "Home",
                 navAbout: "About",
+                navSkills: "Skills",
                 navProjects: "Projects",
                 navContact: "Contact",
                 homeIntro: "Hi, I'm",
